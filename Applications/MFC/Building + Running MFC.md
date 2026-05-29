@@ -61,3 +61,21 @@ Total time for 16 tasks: 368s
 
 
 The docs tell you to use their [batch mode](https://mflowcode.github.io/documentation/running.html#:~:text=can%20be%20appended.-,Batch%20Execution,-The%20MFC%20detects) for running on clusters, but may need to create our own template for the different cluster
+
+
+Don't run two jobs at once on the same case, they will step on each others' toes!
+
+
+I then started running their performance test with different numbers of processors:
+
+```
+./mfc.sh run -n 64 -j $(nproc) examples/3D_performance_test/case.py \
+        -t pre_process simulation --case-optimization
+```
+
+
+| usage    | pre-process time | perf (lower is better) | time |
+| -------- | ---------------- | ---------------------- | ---- |
+| 32 cores | 3.56 s           | 3.93                   | 40 s |
+| 64 cores | 5.35 s           | 2.78                   | 51 s |
+I'm struggling to get it to run on the gpu because it needs non-gnu compilers. And then after it failing with that, it started failing on non-gpu tasks, so I cleaned and rebuilt.
