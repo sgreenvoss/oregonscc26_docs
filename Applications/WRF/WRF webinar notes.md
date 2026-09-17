@@ -19,5 +19,15 @@
 - geogrid: defines map projection, location of domains, dimensions of domains, horizontal resolution
 	- also provides values for static fields at each grid point and interpolates them 
 - **namelist.wps**: user-specified runtime options
-
+	- columns correspond to domains 
+	- set time range: start_date, end_date
+- ungrib
+	- GRIB is a file format for storing gridded fields. compressed lossily
+	- fields are identified by code numbers which are cross-referenced against external tables
+	- ungrib writes data to intermediate file format
+- metgrid
+	- horizontally interpolates meteorological data (from ungrib) to simulation domains (from geogrid)
+	- output: met_em files (netCDF)
+	- after running metgrid, this is a good place to stop and visualize the files - is it reasonable?
 ### WRF
+- namelist.input for WRF (rather than .wps for WPS)
