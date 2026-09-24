@@ -16,4 +16,5 @@
 	- all tests yield OOM errors (even though the dashboard doesn't show that any GPU memory is in use)
 		- tried using --gpu mp but got the same errors
 	- Rebooting the node using `sudo reboot`
-		- taking a while. let's not do this during competition lol
+		- taking a while. let's not do this during competition lol**
+Solution 1: MFC requires lower version of nvhpc. we tried version 25.7 and it worked; however, we need to consider what the recommended version is? (ask the SCC organizer?)
