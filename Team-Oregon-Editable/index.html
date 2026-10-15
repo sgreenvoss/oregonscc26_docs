@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Oregon poster</title>
+  <link rel="stylesheet" href="poster.css">
+  <style>
+    body { margin: 0; background: #17333b; padding: 20px; }
+    section { transform-origin: top left; }
+    @media print {
+      body { padding: 0; background: white; }
+      section { transform: none !important; }
+      @page { size: 1280px 720px; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section>
+<div class="poster">
+  <div class="poster-header">
+    <h1>Team Oregon</h1>
+    <div class="institutions">
+      <span class="institution-tile"><img alt="uo" src="images/UOSignature-356-445.png"></span>
+      <span class="institution-tile"><img alt="osu" src="images/Osu.png"></span>
+      <span class="institution-tile"><img alt="psu" src="images/portland-state-university-logo-png_seeklogo-488238.png"></span>
+      <span class="institution-tile"><img alt="pcc" src="images/Portland_Community_College_logo.svg"></span>
+    </div>
+    <div class="event">
+      <img alt="SC26 conference logo" src="images/sc26_hor_color_black.png">
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <div class="glass roster">
+        <h2>Members</h2>
+        <div class="members">
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Meer Sabahi</h3>
+              <p class="degree">Third year · Electrical and Computer Engineering · Oregon State University</p>
+            </div>
+            <p class="bio">I am interested in processor architecture and how hardware and software work together to make computers more efficient.</p>
+          </div>
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Nabeeha Saffat</h3>
+              <p class="degree">Final term · Mathematics and Computer Science · Portland State University</p>
+            </div>
+            <p class="bio">I am currently interning at Lawrence Berkeley National Laboratory where I am working on reducing FP error in linear algebra libraries.</p>
+          </div>
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Noel Hernandez</h3>
+              <p class="degree">Fourth year · Computer Science and Data Science</p>
+            </div>
+            <p class="bio">I am interested in HPC, graphics programming and low-level software engineering.</p>
+          </div>
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Loc Nguyen</h3>
+              <p class="degree">Second year · Computer Science and Mathematics · Oregon State University</p>
+            </div>
+            <p class="bio">I’m interested in algorithm design, graph theory and scientific computing. Currently working on designing parallel lossy compression algorithms.</p>
+          </div>
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Denver McCarthy</h3>
+              <p class="degree">Returning team member</p>
+            </div>
+            <p class="bio">Returning from last year’s team. Biography to be added.</p>
+          </div>
+          <div class="member">
+            <span class="photo-placeholder">PHOTO</span>
+            <div class="member-meta">
+              <h3>Stella Greenvoss</h3>
+              <p class="degree">Computer Science · University of Oregon</p>
+            </div>
+            <p class="bio">I work with Research Advanced Computing Services at the University of Oregon maintaining and supporting our HPC cluster Talapas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass advisers">
+        <h2>Mentors &amp; Support</h2>
+        <div class="support-people">
+          <div class="support-person">
+            <span class="photo-placeholder">PHOTO</span>
+            <h3>Marko Markoc</h3>
+          </div>
+          <div class="support-person">
+            <span class="photo-placeholder">PHOTO</span>
+            <h3>William Winter</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="glass identity">
+        <h2>Who We Are</h2>
+        <p>We are returning for our second year of competition.<br><br>Three students (Denver, Stella, and Nabeeha) are returning members from last year’s team, while the others (Meer, Loc, and Noel) are new to the competition.<br><br>This allows us to bring experience to the tasks while also setting up next year’s team for success.</p>
+      </div>
+      <div class="glass strategy">
+        <h2>Preparing Across Oregon</h2>
+        <div class="action-list">
+          <div class="action">
+            <strong>Meet</strong>
+· Weekly online to review progress and troubleshoot problems.
+          </div>
+          <div class="action">
+            <strong>Coordinate</strong>
+· Application and benchmark groups share findings.
+          </div>
+          <div class="action">
+            <strong>Document</strong>
+· GitHub preserves shared instructions; Discord supports discussion.
+          </div>
+          <div class="action">
+            <strong>Record</strong>
+· Working compiler and dependency configurations.
+          </div>
+        </div>
+        <div class="collab-logos">
+          <img alt="github" src="images/GitHub_Invertocat_Black.png">
+          <img alt="discord" src="images/Discord-Symbol-Blurple.png">
+          <span>We plan to compete together at the University of Oregon.</span>
+        </div>
+      </div>
+      <div class="glass workflow">
+        <h2>Application Builds &amp; Troubleshooting</h2>
+        <p><strong>WRF / WPS &amp; MFC.</strong> Built and tested scientific applications, working through compiler selection and incompatible dependency versions.</p>
+        <p><strong>From build to execution.</strong> Tested alternative configurations and resolved runtime library search issues; recorded working setups for teammates.</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="glass compute">
+        <h2>Training Environments</h2>
+        <p><b>NVIDIA LaunchPad · 2 × H100 GPUs</b><br>GPU-accelerated applications and benchmarking.<br><br><b>ORCA & Talapas</b><br>Practice with MPI, Slurm and software builds.</p>
+      </div>
+      <div class="glass software">
+        <h2>Tools in Our Workflow</h2>
+        <div class="stackrow slurm">
+          <div class="logowell">
+            <img alt="slurm" src="images/Slurm_logo.svg">
+          </div>
+          <p><strong>Slurm</strong><br>Resource allocation and job execution.</p>
+        </div>
+        <div class="stackrow spack">
+          <div class="logowell">
+            <img alt="spack" src="images/spack-logo-white-text.svg">
+          </div>
+          <p><strong>Spack / Lmod</strong><br>Package, dependency, and environment management.</p>
+        </div>
+        <div class="stackrow cuda">
+          <div class="logowell">
+            <img alt="cuda" src="images/Nvidia_CUDA_Logo.jpg">
+          </div>
+          <p><strong>NVHPC / CUDA / OpenACC</strong><br>GPU compiler and runtime environment.</p>
+        </div>
+        <div class="stackrow openmp">
+          <div class="logowell">
+            <img alt="openmp" src="images/OpenMP_logo.png">
+          </div>
+          <p><strong>OpenMP</strong><br>For programming in parallel on shared memory.</p>
+        </div>
+        <div class="stackrow paraview">
+          <div class="logowell">
+            <img alt="paraview" src="images/paraview.png">
+          </div>
+          <p><strong>ParaView</strong><br>Scientific visualization.</p>
+        </div>
+      </div>
+      <div class="glass apps">
+        <h2>Benchmarking Communication</h2>
+        <p><b>Build.</b> Built OpenMPI and MPICH from source. Built OSU Micro-Benchmarks against both MPI implementations.</p>
+        <p><b>Measure.</b> Measured latency and bandwidth for both same-node and inter-node communication.</p>
+        <p><b>Compare.</b> Compared how MPI implementation and communication path affected observed performance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  <script>
+    function fitPoster() {
+      const scale = Math.min((innerWidth - 40) / 1280, (innerHeight - 40) / 720);
+      document.querySelector('section').style.transform = `scale(${scale})`;
+    }
+    addEventListener('resize', fitPoster);
+    fitPoster();
+  </script>
+</body>
+</html>

@@ -1,0 +1,934 @@
+/* @theme oregon */
+@import 'default';
+
+/*
+ * Team Oregon poster theme
+ * Canvas: 1280 x 720. The inner composition uses 1824 layout units
+ * scaled to 2/3 size. Keep the fixed header and column heights together
+ * when changing spacing. Later selectors are component refinements.
+ */
+
+section {
+  width: 1280px;
+  height: 720px;
+  display: block;
+  box-sizing: border-box;
+  color: #18333a;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 20px;
+  line-height: 1.34;
+  letter-spacing: -.2px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 4% 2%,#88c8bb 0%,transparent 42%),radial-gradient(ellipse at 97% 30%,#97b9e5 0%,transparent 46%),radial-gradient(ellipse at 48% 110%,#d4c0a0 0%,transparent 40%),#e8f0f1;
+}
+
+section * {
+  box-sizing: border-box;
+}
+
+section h1,section h2,section h3,section p,section ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+}
+
+section h1 {
+  font-size: 78px;
+  line-height: 1;
+  letter-spacing: -4px;
+  color: #103d3c;
+  font-weight: 750;
+}
+
+section h2 {
+  font-size: 27px;
+  letter-spacing: -.9px;
+  margin-bottom: 13px;
+  font-weight: 650;
+  color: #123d40;
+}
+
+section h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+section p {
+  font-size: 20px;
+  color: #435963;
+}
+
+.poster {
+  width: 1824px;
+  height: 1010px;
+  transform: scale(0.666666667);
+  transform-origin: top left;
+}
+
+.poster-header {
+  grid-template-columns: 720px 600px 1fr;
+}
+
+.eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #32635f;
+  margin-bottom: 9px;
+}
+
+.sub {
+  font-size: 19px;
+  margin-top: 14px;
+  color: #45676b;
+}
+
+.institutions {
+  display: flex;
+  padding-top: 8px;
+  align-items: center;
+}
+
+.institutions img,.institutions .logo-placeholder {
+  width: 132px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.event {
+  letter-spacing: 1.5px;
+  text-align: right;
+  padding-top: 12px;
+  color: #3c6368;
+}
+
+.event strong {
+  display: block;
+  letter-spacing: -.8px;
+  margin-top: 8px;
+  color: #163e43;
+}
+
+.columns {
+  display: grid;
+  gap: 24px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.glass {
+  background: linear-gradient(125deg,#ffffffbf,#ffffff70);
+  border: 1px solid #ffffffed;
+  border-radius: 26px;
+  box-shadow: 0 12px 30px #1b4b5714,inset 0 2px 0 #ffffff;
+  backdrop-filter: blur(22px);
+  padding: 22px 24px;
+  flex-shrink: 0;
+  min-height: 0;
+}
+
+.identity {
+  background: linear-gradient(120deg,#f1fffae8,#d4ede6b8);
+}
+
+.member img,.photo-placeholder {
+  object-fit: cover;
+  border-radius: 15px;
+  float: left;
+  margin: 0 11px 8px 0;
+}
+
+.photo-placeholder {
+  background: linear-gradient(145deg,#abd6cd,#c3d4e7);
+  border: 1px solid #ffffffb3;
+  box-shadow: inset 0 1px 0 #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  color: #3d7379;
+}
+
+.member h3 {
+  padding-top: 3px;
+}
+
+.member small {
+  font-size: 13px;
+  color: #72868c;
+  margin-top: 7px;
+}
+
+section ul {
+  list-style: none;
+}
+
+section li,section li+li {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #435963;
+  margin: 0 0 11px;
+  padding-left: 17px;
+  position: relative;
+}
+
+section li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #337f78;
+}
+
+.workflow {
+  border-color: #ffffff70;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 23px;
+  color: #f3ffff;
+}
+
+.steps i {
+  color: #a5d7cc;
+  font-style: normal;
+}
+
+.note {
+  font-size: 15px;
+  color: #6b8187;
+  margin-top: 12px;
+}
+
+.compute {
+  background: linear-gradient(125deg,#e4f0ffde,#ffffff85);
+}
+
+.metrics {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #b2c9d0;
+  padding-bottom: 13px;
+  margin-bottom: 12px;
+}
+
+.metric {
+  min-width: 0;
+}
+
+.metric strong {
+  font-size: 34px;
+  letter-spacing: -1.5px;
+  display: block;
+  color: #185b65;
+}
+
+.metric span {
+  font-size: 14px;
+  color: #547482;
+}
+
+.compute .note {
+  font-size: 13px;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 13px 12px;
+}
+
+.tool {
+  text-align: center;
+  font-size: 13px;
+  color: #5c7780;
+}
+
+.tool img,.tool .logo-placeholder {
+  display: flex;
+  width: 100%;
+  height: 39px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.apps p {
+  margin-bottom: 12px;
+}
+
+.apps strong {
+  color: #1e5c5f;
+}
+
+.apps .note {
+  font-size: 14px;
+}
+
+.poster-footer {
+  height: 60px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #537179;
+  font-size: 13px;
+}
+
+.support {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.support img,.support .logo-placeholder {
+  width: 88px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.review {
+  font-size: 12px;
+  text-align: right;
+  color: #607c83;
+  max-width: 490px;
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ffffffdb;
+  border-radius: 12px;
+  color: #3d626d;
+  background: linear-gradient(135deg,#ffffffa8,#ecf6f778);
+  font-size: 14px;
+  padding: 6px;
+  box-shadow: 0 4px 12px #29495808;
+}
+
+.support .logo-placeholder {
+  font-size: 12px;
+}
+
+.member small {
+  display: none;
+}
+
+.stackrow strong {
+  color: #1d5559;
+}
+
+.institutions img {
+  background: #ffffff9c;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.support img {
+  background: #ffffffb3;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.photo-placeholder {
+  font-size: 10px;
+}
+
+.roster h2 {
+  margin-bottom: 15px;
+}
+
+.poster-header {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.institutions {
+  justify-content: center;
+}
+
+.event {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 260px;
+  font-size: 12px;
+}
+
+.columns {
+  grid-template-columns: 1.14fr 1fr 1fr;
+}
+
+.glass h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.roster {
+  flex: none;
+  box-shadow: 0 10px 28px #19365320,inset 0 0 0 3px #ffffff82;
+}
+
+.member .degree {
+  color: #55717c;
+  margin-bottom: 7px;
+}
+
+.member img,.photo-placeholder {
+  height: 79px;
+  width: 65px;
+}
+
+.challenge {
+  height: 332px;
+  flex: none;
+}
+
+.challenge p {
+  font-size: 17px;
+  line-height: 1.44;
+}
+
+.stackrow {
+  display: grid;
+  align-items: center;
+}
+
+.stackrow .logowell {
+  width: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stackrow img {
+  display: block;
+  max-width: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+
+.stackrow.spack .logowell {
+  background: #254956;
+  border-radius: 7px;
+}
+
+.stackrow.spack img {
+  padding: 3px;
+  background: none;
+  border-radius: 0;
+}
+
+.apps {
+  flex: none;
+}
+
+.advisers p {
+  text-align: center;
+  font-size: 21px;
+}
+
+.poster-footer {
+  display: none;
+}
+
+.institutions img {
+  height: 49px;
+  width: 124px;
+}
+
+.member p {
+  font-size: 15px;
+  line-height: 1.36;
+}
+
+.strategy p {
+  font-size: 17px;
+  line-height: 1.43;
+}
+
+.compute {
+  padding: 19px 22px;
+}
+
+.compute h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.apps {
+  padding: 19px 22px;
+}
+
+.apps h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.advisers h2 {
+  font-size: 23px;
+}
+
+.support-people {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.support-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.support-person .photo-placeholder {
+  float: none;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 11px;
+}
+
+.support-person h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.column {
+  gap: 20px;
+}
+
+.roster {
+  padding: 22px;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 22px;
+}
+
+.member {
+  display: grid;
+  grid-template-columns: 65px minmax(0,1fr);
+  grid-template-rows: 84px auto;
+  column-gap: 12px;
+  row-gap: 8px;
+  align-content: start;
+  min-height: 0;
+}
+
+.member .photo-placeholder {
+  float: none;
+  margin: 0;
+  width: 65px;
+  height: 79px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.member .member-meta {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.member h3 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  padding: 0;
+  text-align: left;
+}
+
+.member .degree {
+  margin: 0;
+}
+
+.member .bio {
+  grid-column: 1 / -1;
+  text-align: left;
+  margin: 0;
+}
+
+.advisers {
+  padding: 14px 22px;
+}
+
+.advisers h2 {
+  margin-bottom: 10px;
+}
+
+.support-person .photo-placeholder {
+  width: 56px;
+  height: 66px;
+}
+
+.action-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.action {
+  color: #435963;
+}
+
+.action strong {
+  color: #205e69;
+  font-weight: 700;
+}
+
+.stackrow {
+  grid-template-columns: 78px minmax(0,1fr);
+}
+
+.apps p + p {
+  margin-top: 18px;
+}
+
+.event strong {
+  font-size: 21px;
+}
+
+.strategy .closing {
+  font-size: 16px;
+  line-height: 1.3;
+  margin-top: 10px;
+}
+
+.institutions img[alt="osu"] {
+  object-fit: cover;
+  padding: 0;
+  background: #ffffffb0;
+}
+
+.workflow h2 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.workflow p {
+  color: #435963;
+}
+
+.workflow p+p {
+  margin-top: 12px;
+}
+
+.workflow {
+  background: linear-gradient(125deg,#ffffffbf,#ffffff70);
+  border: 1px solid #ffffffed;
+  box-shadow: 0 12px 30px #1b4b5714,inset 0 2px 0 #ffffff;
+}
+
+.workflow h2 {
+  color: #123d40;
+}
+
+.roster {
+  border: 3px solid #304d70;
+}
+
+.poster-header .event {
+  font-size: 10px;
+}
+
+.poster-header .event strong {
+  font-size: 19px;
+}
+
+.member .degree {
+  font-size: 13px;
+  line-height: 1.32;
+}
+
+.member .bio {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+section {
+  padding: 36px 32px 24px!important;
+}
+
+.institutions {
+  gap: 14px;
+  padding: 0;
+}
+
+.institution-tile {
+  width: 136px;
+  height: 64px;
+  flex: 0 0 136px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffffba;
+  border: 1px solid #ffffffee;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.institutions .institution-tile img {
+  position: static;
+  width: auto;
+  height: auto;
+  max-width: 114px;
+  object-fit: contain;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.institutions .institution-tile img[alt="osu"] {
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  max-width: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  object-fit: contain;
+  background: none;
+  padding: 0;
+}
+
+.columns {
+  height: 810px;
+}
+
+.roster {
+  height: 650px;
+}
+
+.members {
+  grid-template-rows: 165px 165px 190px;
+  row-gap: 17px;
+}
+
+.advisers {
+  height: 140px;
+}
+
+.identity {
+  height: 280px;
+}
+
+.identity p {
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.strategy {
+  height: 280px;
+  padding: 20px 24px;
+}
+
+.strategy h2 {
+  margin-bottom: 12px;
+}
+
+.action {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.action-list {
+  gap: 10px;
+}
+
+.collab-logos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.collab-logos img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  margin: 0;
+}
+
+.collab-logos span {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #526b75;
+}
+
+.workflow {
+  height: 210px;
+}
+
+.workflow p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.compute {
+  height: 180px;
+}
+
+.compute p {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.software {
+  height: 310px;
+  padding: 18px 22px;
+}
+
+.software h2 {
+  margin-bottom: 12px;
+}
+
+.stackrow {
+  min-height: 38px;
+  margin-bottom: 9px;
+  gap: 16px;
+}
+
+.stackrow p {
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.stackrow .logowell {
+  height: 38px;
+}
+
+.stackrow img {
+  max-height: 31px;
+}
+
+.apps {
+  height: 280px;
+}
+
+.apps p {
+  font-size: 17px;
+  line-height: 1.42;
+}
+
+.apps p+p {
+  margin-top: 15px;
+}
+
+.glass {
+  overflow: visible;
+}
+
+.poster-header .event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-header .event img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+.poster-header {
+  padding-top: 4px;
+  gap: 11px;
+}
+
+.poster-header h1 {
+  text-align: center;
+  color: #103d3c;
+}
+
+.institutions .institution-tile img {
+  max-height: 35px;
+}
+
+.institutions .institution-tile img[alt="osu"] {
+  max-height: none;
+}
+
+.poster-header {
+  height: 160px;
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.poster-header h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Avenir Next Rounded Pro Std","Arial Rounded MT Bold","Avenir Next",Arial,sans-serif;
+  font-size: 78px;
+  font-weight: 500;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin: 0!important;
+  padding: 0!important;
+  white-space: nowrap;
+}
+
+.poster-header .institutions {
+  position: absolute;
+  top: 91px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+}
+
+.institutions .institution-tile {
+  box-sizing: border-box;
+  width: 136px;
+  height: 55px;
+  flex: 0 0 136px;
+  padding: 9px 10px;
+}
+
+.poster-header .event {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  left: auto;
+  transform: none;
+  width: 174px;
+  height: 83px;
+  padding: 7px;
+  margin: 0;
+}
