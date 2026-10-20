@@ -20,7 +20,9 @@
 
 ### Solution 1: MFC requires lower version of nvhpc. we tried version 25.7 and it worked; however, we need to consider what the recommended version is? (ask the SCC organizer?)
 export NVHPC_ROOT=/opt/nvidia/hpc_sdk/Linux_x86_64/25.7
+
 export PATH=$NVHPC_ROOT/compilers/bin:$NVHPC_ROOT/comm_libs/mpi/bin:$PATH
+
 export LD_LIBRARY_PATH=$NVHPC_ROOT/compilers/lib:$NVHPC_ROOT/math_libs/lib64:$NVHPC_ROOT/comm_libs/mpi/lib:$LD_LIBRARY_PATH
 export CC=nvc CXX=nvc++ FC=nvfortran MPI_HOME=$NVHPC_ROOT/comm_libs/mpi
 (change the path to nvhpc 25.7 and then use Nvidia version for CC,CXX,FC,MPI.)
