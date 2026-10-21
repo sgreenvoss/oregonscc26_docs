@@ -120,3 +120,5 @@ NCCL env variables: https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/en
 NCCL operation doc: https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html
 
 NCCL code: https://github.com/NVIDIA/nccl
+
+Github repo about optimizing, Technical blog? I'm sure this problem isn't new so there probably exists a technical blog about this
