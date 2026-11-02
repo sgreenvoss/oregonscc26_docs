@@ -1,0 +1,46 @@
+# nccl-tests version 2.21.1 (afd59ab) nccl-headers=23203 nccl-library=23203
+# Collective test starting: reduce_scatter_perf
+# nThread 1 nGpus 2 minBytes 4 maxBytes 1073741824 step: 2(factor) warmup iters: 1 iters: 100 agg iters: 1 validation: 0 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 3810545 on scc-connect-24-gpu01 device  0 [0000:17:00] NVIDIA H100 NVL
+#  Rank  1 Group  0 Pid 3810545 on scc-connect-24-gpu01 device  1 [0000:63:00] NVIDIA H100 NVL
+#
+#                                                              out-of-place                       in-place
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)        
+           0             0     float     sum      -1     0.26    0.00    0.00    N/A     0.19    0.00    0.00    N/A
+           0             0     float     sum      -1     0.22    0.00    0.00    N/A     0.18    0.00    0.00    N/A
+           0             0     float     sum      -1     0.22    0.00    0.00    N/A     0.19    0.00    0.00    N/A
+          32             4     float     sum      -1    12.56    0.00    0.00    N/A    12.38    0.00    0.00    N/A
+          64             8     float     sum      -1    12.42    0.01    0.00    N/A    12.40    0.01    0.00    N/A
+         128            16     float     sum      -1    12.43    0.01    0.01    N/A    12.42    0.01    0.01    N/A
+         256            32     float     sum      -1    12.51    0.02    0.01    N/A    12.41    0.02    0.01    N/A
+         512            64     float     sum      -1    12.51    0.04    0.02    N/A    12.42    0.04    0.02    N/A
+        1024           128     float     sum      -1    12.50    0.08    0.04    N/A    12.44    0.08    0.04    N/A
+        2048           256     float     sum      -1    12.54    0.16    0.08    N/A    12.45    0.16    0.08    N/A
+        4096           512     float     sum      -1    13.80    0.30    0.15    N/A    13.08    0.31    0.16    N/A
+        8192          1024     float     sum      -1    13.11    0.62    0.31    N/A    13.00    0.63    0.32    N/A
+       16384          2048     float     sum      -1    14.57    1.12    0.56    N/A    14.43    1.14    0.57    N/A
+       32768          4096     float     sum      -1    17.61    1.86    0.93    N/A    17.47    1.88    0.94    N/A
+       65536          8192     float     sum      -1    18.07    3.63    1.81    N/A    17.96    3.65    1.82    N/A
+      131072         16384     float     sum      -1    18.11    7.24    3.62    N/A    17.98    7.29    3.64    N/A
+      262144         32768     float     sum      -1    18.52   14.16    7.08    N/A    18.40   14.25    7.12    N/A
+      524288         65536     float     sum      -1    19.05   27.53   13.76    N/A    19.05   27.53   13.76    N/A
+     1048576        131072     float     sum      -1    20.45   51.27   25.63    N/A    20.38   51.45   25.73    N/A
+     2097152        262144     float     sum      -1    24.47   85.69   42.84    N/A    24.44   85.81   42.91    N/A
+     4194304        524288     float     sum      -1    30.86  135.93   67.96    N/A    30.74  136.43   68.21    N/A
+     8388608       1048576     float     sum      -1    43.89  191.14   95.57    N/A    43.68  192.06   96.03    N/A
+    16777216       2097152     float     sum      -1    70.52  237.90  118.95    N/A    69.60  241.04  120.52    N/A
+    33554432       4194304     float     sum      -1   123.43  271.85  135.92    N/A   122.05  274.92  137.46    N/A
+    67108864       8388608     float     sum      -1   225.63  297.43  148.71    N/A   224.29  299.20  149.60    N/A
+   134217728      16777216     float     sum      -1   427.86  313.70  156.85    N/A   424.53  316.16  158.08    N/A
+   268435456      33554432     float     sum      -1   807.33  332.50  166.25    N/A   801.90  334.75  167.37    N/A
+   536870912      67108864     float     sum      -1  1496.92  358.65  179.33    N/A  1482.35  362.17  181.09    N/A
+  1073741824     134217728     float     sum      -1  2881.71  372.61  186.30    N/A  2855.94  375.97  187.98    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 46.8309 
+#
+# Collective test concluded: reduce_scatter_perf
+#
+
