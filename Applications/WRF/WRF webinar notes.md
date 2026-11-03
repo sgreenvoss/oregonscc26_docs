@@ -31,3 +31,10 @@
 	- after running metgrid, this is a good place to stop and visualize the files - is it reasonable?
 ### WRF
 - namelist.input for WRF (rather than .wps for WPS)
+	- start_* and end_* needs to match up with WPS
+	- for numerical instability, time_step needs to be < 6 \* dx
+	- again, the slides show more information about the different variables.
+	- &physics : model physics options
+- to run:
+	- serial or smpar: ./wrf.exe >& wrf.log
+	- dmpar: mpiexec -np N ./wrf.exe
