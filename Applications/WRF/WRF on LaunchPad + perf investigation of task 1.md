@@ -18,7 +18,9 @@
 			((e_we)/100) * ((e_sn)/100) = least amount of processors you should use
 	- trying again with -n 32, which is a little greater than the starting place above
 		- died again - trying to tmux it rather than nohup, jsut in case
-	- 
+	- the tmuxing worked. annoying - maybe it was hanging up despite being nohup'd. 
+	- using 32 cores, we took 1.41 hours. that's WILDLY faster than smpar
+	- scaling up to 64 cores i am actually seeing no projected improvement.
 
 
 
@@ -32,3 +34,5 @@ judging by timestamps, it took a little over five hours. result of time command 
 ![[img/t2_movie.gif]]
 
 ![[img/task2-tq.png]]
+
+### wrf/2xtmm6n is dm+sm, yet to be evaluated
