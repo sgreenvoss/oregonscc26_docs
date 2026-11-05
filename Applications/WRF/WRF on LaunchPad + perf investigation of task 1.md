@@ -29,6 +29,6 @@ currently running smpar, started at 12:50 or so
 
 judging by timestamps, it took a little over five hours. result of time command was not saved (lol) but a watch on wrf proc yields 18009s = 5 hours
 
-![[t2_movie.gif]]
+![[img/t2_movie.gif]]
 
-![[task2-tq.png]]
+![[img/task2-tq.png]]
