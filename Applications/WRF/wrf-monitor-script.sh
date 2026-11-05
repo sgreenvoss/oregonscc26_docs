@@ -70,11 +70,11 @@ while true; do
         timestamp=${BASH_REMATCH[1]}
         domain=${BASH_REMATCH[2]}
 
-	now_epoch=$(to_epoch "$timestamp")
-	model_elapsed=$((now_epoch - start_epoch))
-	rhs=$((end_epoch - start_epoch))
-	pct=$(((100 * model_elapsed) / rhs))
-        echo "timestamp=$timestamp domain=$domain, progress: $pct%"
+        now_epoch=$(to_epoch "$timestamp")
+        model_elapsed=$((now_epoch - start_epoch))
+        rhs=$((end_epoch - start_epoch))
+        pct=$(((100 * model_elapsed) / rhs))
+            echo "timestamp=$timestamp domain=$domain, progress: $pct%"
     fi
 
     right_now=$(date +%s)
@@ -88,14 +88,17 @@ while true; do
     if [ "$remaining_time" -le 0 ]; then 
 		exit 0 
 	fi
+
     tput setab 4
     echo $JOB_NAME
     tput sgr0
+
     echo "Elapsed: $(($elapsed_time / 60 )) minutes"
     echo "Projected total time: $(( (elapsed_time + remaining_time) / 60 )) minutes"
     echo "Time remaining: $(( remaining_time / 60)) minutes" 
     tput bold
     echo "Projected finish at $(date -d @"$finish_epoch" '+%Y-%m-%d %H:%M:%S')"
+
     tput sgr0
     sleep $PERIOD
 done
