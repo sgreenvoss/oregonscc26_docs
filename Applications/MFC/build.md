@@ -27,6 +27,8 @@ NVCOMPILER_ACC_CUDA_HEAPSIZE = 2GB -> This parameter allocates a part of VRAM fo
 
 -j n -> This number of thread each gpu can access (I believe if there is more threads ,they're just idle, losing more time due to context-switching between threads)
 
+--case-optimized -> Automatic tuning, hard-coding parameters to speed up the simulation, however, accuracy remains unchanged.
+
 
 # Some questions worth answering:
 
