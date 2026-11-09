@@ -4,6 +4,7 @@ cd Applications/MFC
 
 source ./mfc.sh load -c my_h100 -m g
 
+remeber to override Slurm's srun with --binary mpirun (as Slurm is quite buggy right now)
 
 # Important parameters list that may affect speed and accuracy
 
