@@ -6,6 +6,7 @@ source ./mfc.sh load -c my_h100 -m g
 
 remeber to override Slurm's srun with --binary mpirun (as Slurm is quite buggy right now)
 
+to see/change the configure, nano MFC/toolchain/module
 # Important parameters list that may affect speed and accuracy
 
 rdma_mpi ("T" to utilize NVlink) -> This is essential because it allows GPUs communicate directly to GPUs
