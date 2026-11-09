@@ -21,6 +21,7 @@
 	- the tmuxing worked. annoying - maybe it was hanging up despite being nohup'd. 
 	- using 32 cores, we took 1.41 hours. that's WILDLY faster than smpar
 	- scaling up to 64 cores i am actually seeing no projected improvement.
+		- 1.39 hours. interesting.... strong scaling is bad at least with dmpar on this particular problem
 
 
 
@@ -36,3 +37,25 @@ judging by timestamps, it took a little over five hours. result of time command 
 ![[img/task2-tq.png]]
 
 ### wrf/2xtmm6n is dm+sm, yet to be evaluated
+https://blog.mylab.cc/2021/02/05/Understanding-MPI-map-by-and-bind-to-option/
+maybe necessary: `export PMIX_MCA_psec=^munge`
+i had to copy wrfbdy, wrfinput, and all met_em alongside the namelist.input file
+
+```
+export OMP_NUM_THREADS=2 
+export OMP_PLACES=cores 
+export OMP_PROC_BIND=close 
+mpirun -np 32 --map-by ppr:16:socket:PE=2 --bind-to core ./wrf.exe
+```
+note this is Open MPI 4.1.6 - maybe test on other distributions?
+
+1.28 hours
+
+
+64 ranks x 2 threads (each rank's OpenMP threads share one core's SMT pair)
+```
+export OMP_NUM_THREADS=2 
+OMP_PLACES=threads 
+OMP_PROC_BIND=close 
+mpirun -np 64 --use-hwthread-cpus --map-by ppr:32:socket:PE=2 --bind-to hwthread ./wrf.exe
+```

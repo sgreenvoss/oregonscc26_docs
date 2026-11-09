@@ -10,6 +10,7 @@ to see/change the configure, nano MFC/toolchain/module
 # Important parameters list that may affect speed and accuracy
 
 rdma_mpi ("T" to utilize NVlink) -> This is essential because it allows GPUs communicate directly to GPUs
+- We are allowed to use this option, and Team Diablo seems to agree that setting this is critical.
 
 *** resolution/domain decomposition (m,n,p) -> This affects the computing cells, which also affects accuracy and resolution of the simulation
 
@@ -39,3 +40,5 @@ WENO order really plays an important role, of course, 7 is always give the most 
 
 
 double or single? does physics simulation affect by rounding off tiny number behind
+- Per the [google group](https://groups.google.com/g/scc-connect-sc26/c/MGWbGteblvY), double-precision is required. 
+- Team Diablo found that --single was ~23% faster. 
