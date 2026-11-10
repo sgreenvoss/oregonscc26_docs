@@ -1,1 +1,3 @@
 Information for the 2026 SCC Connect competition. For your eyes only...
+
+Many of these markdown files (at least Stella's) are intended to be viewed inside the [Obsidian](https://obsidian.md/) application - broken images should work fine there. Let me know if they don't!
