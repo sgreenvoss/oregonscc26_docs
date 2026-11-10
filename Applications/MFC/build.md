@@ -30,6 +30,15 @@ NVCOMPILER_ACC_CUDA_HEAPSIZE = 2GB -> This parameter allocates a part of VRAM fo
 
 --case-optimized -> Automatic tuning, hard-coding parameters to speed up the simulation, however, accuracy remains unchanged.
 
+# Cool parameters but unsure if it help
+
+cyl_coord	Logical	Cylindrical coordinates (2D: Axisymmetric, 3D: Cylindrical)
+
+nv_uvm_out_of_core	Logical	Enable NVIDIA Unified Virtual Memory out-of-core execution
+
+nv_uvm_pref_gpu	Logical	Prefer GPU placement for NVIDIA UVM allocations
+
+nv_uvm_igr_temps_on_gpu	Integer	Store IGR temporaries on GPU with UVM
 
 # Some questions worth answering:
 
@@ -42,3 +51,11 @@ WENO order really plays an important role, of course, 7 is always give the most 
 double or single? does physics simulation affect by rounding off tiny number behind
 - Per the [google group](https://groups.google.com/g/scc-connect-sc26/c/MGWbGteblvY), double-precision is required. 
 - Team Diablo found that --single was ~23% faster. 
+
+
+what does case-optimized change?
+- it sounds like a compiler trick avoid redundant steps when running the code
+
+ideal stress test that can show the difference between configures? I tried sphbubcollapse and 2D_shockdroplet.
+
+
