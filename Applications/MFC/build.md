@@ -48,6 +48,13 @@ WENO order = 1/3/5/7 -> This is how many neighbors a cell use to calculate its v
 
 --case-optimized -> Automatic tuning, hard-coding parameters to speed up the simulation, however, accuracy remains unchanged.
 
+## Formatted Output
+
+if we allow more values written to the database, the simulation may slow down due to I/O process.
+
+From my understanding, every necessary information for the simulation will be stored in GPUs' VRAM. Hence, we only need to turn on data which is required for validating from the SCC committee.
+
+
 
 # Cool parameters but unsure if it help
 
@@ -59,11 +66,6 @@ nv_uvm_pref_gpu	Logical	Prefer GPU placement for NVIDIA UVM allocations -> borro
 
 nv_uvm_igr_temps_on_gpu	Integer	Store IGR temporaries on GPU with UVM
 
-## Formatted Output
-
-if we allow more values written to the database, the simulation may slow down due to I/O process.
-
-From my understanding, every necessary information for the simulation will be stored in GPUs' VRAM. Hence, we only need to turn on data which is required for validating from the SCC committee.
 
 # Some questions worth answering:
 
