@@ -37,7 +37,7 @@ cfl_const_dt enables constant dt time-stepping where dt results in a specified C
 
 ## Numerical solver
  
-riemann_solver = 1/2/3/4 -> Unsure
+riemann_solver = 1/2/3/4 -> Solving how fluids (physics object) move. The main difference between algorithms comes from how it solves the boundary. Some of them calculate exactly and return sawtooth boundary (note: all simulations are discrete). Some of them use diffusion to estimate the middle point without calculating and return faster but blurry result. We have to decide if there is diminishing returns for calculating too exact.
 
 ** time_stepper -> This is numerical algorithms (Runge Kutta 1/2/3) and many mores (We can utilize algorithmic advantage). From my understanding, 1/2/3 here means how many points we look before predicting the line.
 
@@ -51,7 +51,7 @@ WENO order = 1/3/5/7 -> This is how many neighbors a cell use to calculate its v
 
 # Cool parameters but unsure if it help
 
-cyl_coord	Logical	Cylindrical coordinates (2D: Axisymmetric, 3D: Cylindrical)
+cyl_coord	Logical	Cylindrical coordinates (2D: Axisymmetric, 3D: Cylindrical) -> may increase irregular memory access but may be improve the speed on some specific simulations related to rotation (I guess)
 
 nv_uvm_out_of_core	Logical	Enable NVIDIA Unified Virtual Memory out-of-core execution
 
