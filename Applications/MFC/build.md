@@ -29,6 +29,11 @@ floating-point precision (single or double but no mixed) -> This affects the acu
 
 ** cfl_target (resolution jump step) -> This parameter affects the jump step of the simulation, which affects accuracy and runtime
 
+dt (time step) -> specifies the constant time step size used in the simulation. The value of dt needs to be sufficiently small to satisfy the Courant-Friedrichs-Lewy (CFL) condition
+
+cfl_adap_dt enables adaptive time stepping with a constant CFL when true
+
+cfl_const_dt enables constant dt time-stepping where dt results in a specified CFL for the initial condition
 
 ## Numerical solver
  
@@ -54,9 +59,16 @@ nv_uvm_pref_gpu	Logical	Prefer GPU placement for NVIDIA UVM allocations -> borro
 
 nv_uvm_igr_temps_on_gpu	Integer	Store IGR temporaries on GPU with UVM
 
+## Formatted Output
+
+if we allow more values written to the database, the simulation may slow down due to I/O process.
+
+From my understanding, every necessary information for the simulation will be stored in GPUs' VRAM. Hence, we only need to turn on data which is required for validating from the SCC committee.
+
 # Some questions worth answering:
 
 there are a few numerical algorithms in time_stepper, I wonder what is their algorithmic advantage in our usage case?
+- time_stepper basically is just how you want the result more accurate or less accurate. However, riemann_solver is quite interesting, when running, the physics object has sawtooth at its boundary, some algorithm use diffusion to calculate the middle point and end up being faster but blurry result. 
 
 
 WENO order really plays an important role, of course, 7 is always give the most accurate result. But, can we find an example using lower WENO order gives a good result? In other words, any usage cases that knowing more neighbors doesn't affect the result much
@@ -68,7 +80,7 @@ double or single? does physics simulation affect by rounding off tiny number beh
 
 
 what does case-optimized change?
-- it sounds like a compiler trick avoid redundant steps when running the code
+- it is a compiler trick avoid redundant steps (eliminating unused code, hardcoding variables to avoid memory access, loop unrolling for parallel programming) when running the code
 
 ideal stress test that can show the difference between configures? I tried sphbubcollapse and 2D_shockdroplet.
 
