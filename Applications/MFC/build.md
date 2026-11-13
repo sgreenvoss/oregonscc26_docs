@@ -23,6 +23,8 @@ NVCOMPILER_ACC_CUDA_HEAPSIZE = 2GB -> This parameter allocates a part of VRAM fo
 
 ## Accuracy-related
 
+--fastmath flag -> Remove IEEE's strict numerical stability (as GPUs usually are undeterminism, unstable)
+
 floating-point precision (single or double but no mixed) -> This affects the acucracy and the runtime -> it's required to use double precision
 
 *** resolution/domain decomposition (m,n,p) -> This affects the computing cells, which also affects accuracy and resolution of the simulation
