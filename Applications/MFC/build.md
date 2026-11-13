@@ -50,6 +50,8 @@ WENO order = 1/3/5/7 -> This is how many neighbors a cell use to calculate its v
 
 --case-optimized -> Automatic tuning, hard-coding parameters to speed up the simulation, however, accuracy remains unchanged.
 
+--ncu -> Doing profile run for Nsight
+
 ## Formatted Output
 
 if we allow more values written to the database, the simulation may slow down due to I/O process.
@@ -88,4 +90,34 @@ what does case-optimized change?
 
 ideal stress test that can show the difference between configures? I tried sphbubcollapse and 2D_shockdroplet.
 
+# Tests
 
+## Test 1: Compute vs. Bandwidth Wall (WENO Scaling)
+
+The Setup: Run your baseline grid three times, changing only weno_order to 3, 5, and 7. Keep --fastmath off and precision = 2.
+
+The Diagnosis: If grind time scales linearly with the WENO order, your ALUs are the bottleneck. If the grind time remains nearly flat across all three runs, the GPU compute cores are waiting on the VRAM, proving you are entirely memory-bandwidth bound.
+
+## Test 2: The Data Pipe Limit (Precision Scaling)
+
+The Setup: Keep weno_order = 5. Run once with precision = 2 (FP64) and once with precision = 1 (FP32).
+
+The Diagnosis: Even though SCC requires double-precision for the final run, this test proves the hardware limit. FP32 cuts the data payload exactly in half. If your grind time drops by exactly 50%, you have definitive proof for the judges that the simulation's ceiling is the HBM3 memory bandwidth, not the GPU's compute capability.
+
+## Test 3: Inter-GPU Communication (NVLink/RDMA)
+
+The Setup: Keep the baseline grid (split across both H100s). Run once with rdma_mpi = F and once with rdma_mpi = T.
+
+The Diagnosis: This measures the MPI boundary exchange overhead. A massive drop in grind time with rdma_mpi = T proves that bypassing the host CPU and using NVLink for direct GPU-to-GPU VRAM access is critical for scaling.
+
+## Test 4: The IEEE Compliance Penalty (Hardware Intrinsics)
+
+The Setup: Lock weno_order = 5 and precision = 2. Run once with standard compilation and once by appending --fastmath to your command line.
+
+The Diagnosis: Measures how much time the ALUs waste on strict rounding rules and denormal tracking. The speedup here highlights the exact performance cost of IEEE strictness in the WENO smoothness indicators.
+
+## Test 5: The PCIe / Memory Capacity Wall (UVM Limits)
+
+The Setup: Turn on nv_uvm_out_of_core = T. Systematically increase your grid dimensions (m,n,p) by 10% each run.
+
+The Diagnosis: The moment your fluid domain exceeds 80GB per GPU, the H100s will start paging data back to the host CPU's RAM. Your grind time will instantly spike by a factor of 10x to 50x. This establishes the absolute mathematical ceiling for your grid size during the competition.
