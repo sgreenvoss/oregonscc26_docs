@@ -43,6 +43,10 @@ riemann_solver = 1/2/3/4 -> Solving how fluids (physics object) move. The main d
 
 ** time_stepper -> This is numerical algorithms (Runge Kutta 1/2/3) and many mores (We can utilize algorithmic advantage). From my understanding, 1/2/3 here means how many points we look before predicting the line.
 
+### Reconstruction type:
+
+MUSCL order = 1/2 it's more cheap computational cost option but less smooth and accurate (there are a lot of MUSCL_related parameters, such as muscl_lim, muscl_eps,...)
+
 WENO order = 1/3/5/7 -> This is how many neighbors a cell use to calculate its value
  (there are a lot of WENO-related parameters, such as weno_order, weno_eps, mapped_weno, wenoz, wenoz_q, teno, teno_CT, null_weights, mp_weno)
 
@@ -121,3 +125,7 @@ The Diagnosis: Measures how much time the ALUs waste on strict rounding rules an
 The Setup: Turn on nv_uvm_out_of_core = T. Systematically increase your grid dimensions (m,n,p) by 10% each run.
 
 The Diagnosis: The moment your fluid domain exceeds 80GB per GPU, the H100s will start paging data back to the host CPU's RAM. Your grind time will instantly spike by a factor of 10x to 50x. This establishes the absolute mathematical ceiling for your grid size during the competition.
+
+
+# MFC Scoring
+<img width="1261" height="242" alt="image" src="https://github.com/user-attachments/assets/e4dc2716-f477-4960-b59e-7b90116df8da" />
