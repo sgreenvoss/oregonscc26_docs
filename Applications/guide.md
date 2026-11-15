@@ -8,7 +8,7 @@
   - Check NUMA hardware layout: `numactl --hardware`
   - Bind CPU and matching memory location: `numactl --cpunodebind=<NODE_ID> --membind=<NODE_ID> <COMMAND>`
 - [ ] **3. Set GPU Visibility**
-  - Set active GPU(s): `export CUDA_VISIBLE_DEVICES=0` (or `0,1` for multiple GPUs, or `""` for no GPU)
+  - Set active GPU(s): `export CUDA_VISIBLE_DEVICES=0` (or `0,1` for multiple GPUs, or `""` for no GPU) *if your application doesn't use GPUs, please state it*
 - [ ] **4. Submit Tasks**
   - **Option A (Batch Job):** Create a Slurm job script (e.g., `job.sh`) and submit it via `sbatch job.sh`
   - **Option B (Direct Run):** Execute your command directly using the currently allocated resources
@@ -16,6 +16,6 @@
   - Whenever you start a new remote session, re-activate your environment and reinstall all required dependencies and libraries before running your code
 - [ ] **6. Monitor & Kill a Task**
   - Check active GPU / CPU processes: `nvtop` (GPU) or `htop` (CPU)
-  - Terminate a process: `kill -9 <PID>` (or `scancel <JOB_ID>` for Slurm jobs) — *always double-check with teammates before killing shared processes*
+  - Terminate a process: `kill -9 <PID>` (or `scancel <JOB_ID>` for Slurm jobs) *always double-check with teammates before killing shared processes*
 - [ ] **7. Download a File or Folder to Local Machine**
   - Run from your **local terminal** (add `-r` to download a directory): `scp -P 11538 nvidia@global.prd.ga.launchpad.nvidia.com:<location_global> <location_local>`
