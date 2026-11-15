@@ -16,4 +16,6 @@
   - Whenever you start a new remote session, re-activate your environment and reinstall all required dependencies and libraries before running your code
 - [ ] **6. Monitor & Kill a Task**
   - Check active GPU / CPU processes: `nvtop` (GPU) or `htop` (CPU)
-  - Terminate a process: `kill -9 <PID>` (or `scancel <JOB_ID>` for Slurm jobs)  *always double-check with teammates before killing shared processes*
+  - Terminate a process: `kill -9 <PID>` (or `scancel <JOB_ID>` for Slurm jobs) — *always double-check with teammates before killing shared processes*
+- [ ] **7. Download a File or Folder to Local Machine**
+  - Run from your **local terminal** (add `-r` to download a directory): `scp -P 11538 nvidia@global.prd.ga.launchpad.nvidia.com:<location_global> <location_local>`
